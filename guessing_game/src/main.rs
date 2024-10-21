@@ -1,7 +1,4 @@
 use std::io::{self, Write};
-use std::time::Instant;
-
-
 fn main() {
 
     println!("Guess the number!\n Please input your guess.");
