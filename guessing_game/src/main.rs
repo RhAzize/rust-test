@@ -1,4 +1,5 @@
 use std::io::{self, Write};
+
 fn main() {
 
     println!("Guess the number!\n Please input your guess.");
