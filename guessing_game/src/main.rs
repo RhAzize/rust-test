@@ -51,10 +51,9 @@ fn data() -> (u32, u32, String) {
 }
 
 fn array() {
-    //Array----------------------------------------
+    // On déclare un tableau de 5 éléments ac le type i32
     let a: [i32; 5] = [1, 2, 3, 4, 5];
     println!("a[0] = {},a[1] = {}", a[0], a[1]);
-    //----------------------------------------------
 }
 
 fn tuple() {
