@@ -1,9 +1,14 @@
-use rand;
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io::{self, Write};
 
 fn main() {
+    // test tuple
+    tuple();
+
+    // test array
+    array();
+    // test guess
     //Gen un num de 0 a 100
     let secret: u32 = rand::thread_rng().gen_range(0..=100);
 
@@ -35,4 +40,29 @@ fn main() {
         }
         println!("You guessed: {}", guess);
     }
+}
+
+// Tuple
+fn data() -> (u32, u32, String) {
+    let x: u32 = 5;
+    let y: u32 = 10;
+    let z: String = "Hello".to_string();
+    (x, y, z)
+}
+
+fn array() {
+    //Array----------------------------------------
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("a[0] = {},a[1] = {}", a[0], a[1]);
+    //----------------------------------------------
+}
+
+fn tuple() {
+    // On déstructure le tuple
+    let (x, y, z) = data();
+    println!("data value x:{x} y={y} z={z}");
+
+    // On ignore des valeurs
+    let (x, _, z) = data();
+    println!("data value without y x:{x} z={z}");
 }
