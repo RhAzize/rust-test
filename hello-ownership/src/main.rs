@@ -2,7 +2,6 @@ fn main() {
 
     //principe de Ownership
 
-
     //example 1
     let x = 5; // x est le propriétaire de la valeur 5
 
