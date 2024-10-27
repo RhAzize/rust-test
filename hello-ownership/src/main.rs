@@ -10,7 +10,7 @@ fn main() {
     let y = x;
 
     // appel par référence de y
-    let z = &y; // z est une référence à y
+    let _z = &y; // z est une référence à y
 
     //example 2 avec les chaines de caractères
     let s1 = String::from("hello");
