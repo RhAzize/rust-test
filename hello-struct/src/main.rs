@@ -1,29 +1,45 @@
-struct Vehicle {
-    model: String,
-    year: i32,
-    mileage: i32,
-    is_running: bool,
-}
-#[derive(Debug)]
-struct User {
-    email: String,
-    first_name: String,
-    password: String,
-    active: bool,
-}
-
-fn build_user(email: String, first_name: String, password: String, active: bool) -> User {
-    let user = User {
-        email,
-        first_name,
-        password,
-        active,
-    };
-    user
-}
+mod models;
+use models::book::Book;
+use models::character::Character;
+use models::school::School;
+use models::user::{build_user, User};
+use models::vehicle::Vehicle;
 
 fn main() {
-    //test user
+    /*
+        Test implémentation de structure et de fonction.
+        Création et import des modèles.
+    */
+
+    // Test Character
+    let mut character = Character::new(String::from("Azize"));
+    character.take_damage(20);
+    character.take_damage(20);
+    character.take_damage(20);
+    character.take_damage(20);
+    character.take_damage(20);
+    character.take_damage(20);
+    character.level_up();
+    character.level_up();
+    character.level_up();
+
+    // Test Book
+    let mut book = Book::new(String::from("Rust Programming"), String::from("azize"), 300);
+
+    println!(
+        "Nouveau livre ajouté: {} de {}, {} pages",
+        book.title, book.author, book.page
+    );
+    book.borrowed();
+    book.borrowed();
+    book.return_book();
+    book.borrowed();
+
+    // Test school
+    let school = School::new(10, 2);
+    println!("Total var school: {}", school.sum());
+
+    //test Personne
     let person = build_user(
         String::from("a@a.a"),
         String::from("john"),
@@ -32,7 +48,7 @@ fn main() {
     );
 
     println!(
-        "Build user with email : {}, name : {}, password : {} and is active : {}",
+        "email : {}, name : {}, password : {} and is active : {}",
         person.email, person.first_name, person.password, person.active
     );
 
